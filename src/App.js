@@ -23,14 +23,14 @@ const App = () => {
    /**********************************************************
     *  API ROUTES
     **********************************************************/
-    const apiTourGuidePath = 'http://localhost:5000/api/tourGuides';
+    const apiUserPath = 'http://localhost:5000/api/users';
 
     const getAllUsers = async () => {
-      await axios.get(apiTourGuidePath).then((res) => { setUsers(res.data); console.log(res.data); }).catch((err) => console.log(err));
+      await axios.get(apiUserPath).then((res) => { setUsers(res.data); console.log(res.data); }).catch((err) => console.log(err));
    }
 //////////////////////////////////////////////////////////////
     const postNewUser = async (newUser) => {
-       await axios.post(apiTourGuidePath, newUser).then((res) => { console.log(res.data); }).catch(err => {
+       await axios.post(apiUserPath, newUser).then((res) => { console.log(res.data); }).catch(err => {
           if (err.response.status === 400) {
              console.log(err.response.data)
             
@@ -39,7 +39,7 @@ const App = () => {
     }
 //////////////////////////////////////////////////////////////
     const postUserLogin = async (email) => {
-      await axios.post(`${apiTourGuidePath}/login`, email).then((res) => { setLoggedInUser(res.data); console.log(res.data) }).catch((err) => { console.log(err); });
+      await axios.post(`${apiUserPath}/login`, email).then((res) => { setLoggedInUser(res.data); console.log(res.data) }).catch((err) => { console.log(err); });
    }
 
    /**********************************************************
@@ -108,7 +108,7 @@ const handleUserSubmit = (event) => {     // AppLogin
    /////////////// CONSOLE.LOGS ///////////////// 
    console.log('all users', users);
    console.log('loggedInUser: ', loggedInUser);
-   console.log('logonData: ', logonData); 
+   console.log('new User ', newUser); 
 
    return (
       <div id='app' className='App'>
