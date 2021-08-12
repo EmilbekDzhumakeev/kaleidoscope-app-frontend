@@ -6,17 +6,9 @@ import './main.css'
 const Main = (props) => {
    return (
       <div className='main'>
-         <div>
-            <div>
-               
-            <div>
-              
-
-            </div>
-            <div>
-               
-            </div>
-         </div>
+        
+            <Profile  loggedInUser={props.loggedInUser}  />
+           
       </div>
    )
 }

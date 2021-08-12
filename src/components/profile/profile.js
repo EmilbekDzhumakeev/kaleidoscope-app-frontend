@@ -8,7 +8,9 @@ const Profile = (props) => {
    return (
       <div className='profile'>
          <h3>Profile</h3>
-      
+         <UserInfo loggedInUser={props.loggedInUser} />
+
+
       </div>
    )
 }
